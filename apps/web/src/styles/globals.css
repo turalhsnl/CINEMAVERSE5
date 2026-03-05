@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080810;
+  color: #e8eaf0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0d0d1a; }
+::-webkit-scrollbar-thumb { background: #2a2a42; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FF6B2C; }
+
+::selection { background: rgba(255, 107, 44, 0.28); color: #fff; }
+
+/* ── Utilities ─────────────────────────────────────── */
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Ember gradient button */
+  .btn-ember {
+    background: linear-gradient(135deg, #ff6b2c 0%, #e5521a 100%);
+    box-shadow: 0 6px 22px rgba(255, 107, 44, 0.38);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .btn-ember:hover:not(:disabled) {
+    transform: translateY(-1px) scale(1.025);
+    box-shadow: 0 10px 32px rgba(255, 107, 44, 0.5);
+  }
+  .btn-ember:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  .btn-ember:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Card lift on hover */
+  .card-lift {
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.28s ease;
+    will-change: transform;
+  }
+  .card-lift:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55),
+                0 0 28px rgba(255, 107, 44, 0.12);
+  }
+
+  /* Skeleton shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04) 25%,
+      rgba(255,255,255,0.09) 50%,
+      rgba(255,255,255,0.04) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Multi-line clamp helpers */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

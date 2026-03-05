@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "CinemaVerse",
+    "slug": "cinemaverse",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#080810"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.cinemaverse.app"
+    },
+    "android": {
+      "adaptiveIcon": { "backgroundColor": "#080810" },
+      "package": "com.cinemaverse.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "scheme": "cinemaverse"
+  }
+}

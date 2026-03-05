@@ -1,0 +1,8 @@
+node_modules
+.expo
+.next
+dist
+build
+.env
+apps/mobile/node_modules
+apps/web/node_modules
