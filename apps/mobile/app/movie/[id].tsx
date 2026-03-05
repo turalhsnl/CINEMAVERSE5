@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import {
   View, Text, ScrollView, TouchableOpacity,
-  StyleSheet, ActivityIndicator, Alert,
+  StyleSheet, ActivityIndicator, Alert, Linking,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import * as Linking from "expo-linking";
 import { ChevronLeft, Star, Clock, Calendar, Play, Heart, Bookmark } from "lucide-react-native";
 import { C, imgUrl, tmdbGet } from "../../src/lib/theme";
 import { useAuthStore } from "../../src/lib/store";
